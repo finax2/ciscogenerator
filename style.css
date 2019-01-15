@@ -1,0 +1,102 @@
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 80vw;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    border: 2px solid #eee;
+    margin-left: 30px;
+    width: calc(80vw - 40px);
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+body{
+    font-family: 'PT Sans', sans-serif;
+    transition: 0.1s;
+}
+button, input{
+    margin: 2px;
+}
+button{
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    background: #cb4e4e;
+    color: #fff;
+    box-shadow: 0 6px #ab3c3c;
+    -webkit-transition: none;
+    -moz-transition: none;
+    border-radius: 0 0 5px 5px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: white;
+    color: #cb4e4e;
+    border: 2px solid #cb4e4e;
+    box-sizing: border-box;
+}
+.addbtns{
+    padding: 10px 20px;
+    background: #1fbc00;
+    box-shadow: 0 6px #137700;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+.addbtns:hover {
+    background-color: white;
+    color: #1fbc00;
+    border: 2px solid #1fbc00;
+    box-sizing: border-box;
+}
+.accordion:hover {
+    border: none;
+}
+#clip{
+    background: #009ae2;
+    box-shadow: 0 6px #015a84;
+    display: none;
+}
+#clip:hover{
+    background-color: white;
+    color: #009ae2;
+    border: 2px solid #009ae2;
+    box-sizing: border-box;
+}
+#cliparea{
+    display: none;
+}
+header{
+    font-size: 3em;
+    vertical-align: top;
+    text-align: center;
+}
+#output{
+    background-color: #ccc;
+    padding: 7px;
+    width: 80vw;
+    margin-left: 30px;
+}
