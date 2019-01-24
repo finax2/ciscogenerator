@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cisco-Grundkonfig</title>
-    <script src="../../../../../Desktop/cisco/main.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-</head>
-<body>
-<header><img width="100px" src="https://www.planetb.fr/pages-2/cisco.png">- Grundkonfiguration</header>
-<button class="accordion">Grundkonfiguration</button>
-<div class="panel">
-    <label for="hostname">Hostname: </label>
-    <input type="text" name="hostname" id="hostname"><br>
-    <label for="secret">secret: </label>
-    <input type="text" name="secret" id="secret"><br>
-    <label for="description">description: </label>
-    <input type="text" name="description" id="description"><br>
-    <label for="banner">banner: </label>
-    <input type="text" name="banner" id="banner"><br>
-    <input type="checkbox" name="encrypt" id="encrypt">
-    <label for="encrypt">service password-encryption</label><br>
-    <input type="checkbox" name="domlookup" id="domlookup">
-    <label for="domlookup">no ip domain-lookup</label><br>
-    <input type="checkbox" name="newuser" id="newuser" onchange="document.getElementById('passworduser').disabled = !this.checked;">
-    <label for="newuser">create a user cisco on privilege 15 with password</label>
-    <input type="text" name="passworduser" id="passworduser" disabled="disabled"><br>
-    <input type="checkbox" name="vtychecked" id="vtychecked" onchange="document.getElementById('passwordvty').disabled = !this.checked;">
-    <label for="vtychecked">configure vty port with password</label>
-    <input type="text" name="passwordvty" id="passwordvty" disabled="disabled"><br>
-    <input type="checkbox" name="conschecked" id="conschecked" onchange="document.getElementById('passwordcons').disabled = !this.checked;">
-    <label for="conschecked">configure console port with password: </label>
-    <input type="text" name="passwordcons" id="passwordcons" disabled="disabled"><br>
-</div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cisco-Grundkonfig</title>
+        <script src="main.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    </head>
+    <body>
+        <header><img width="100px" src="https://www.planetb.fr/pages-2/cisco.png">- Grundkonfiguration</header>
+        <button class="accordion">Grundkonfiguration</button>
+        <div class="panel">
+            <label for="hostname">Hostname: </label>
+            <input type="text" name="hostname" id="hostname"><br>
+            <label for="secret">secret: </label>
+            <input type="text" name="secret" id="secret"><br>
+            <label for="description">description: </label>
+            <input type="text" name="description" id="description"><br>
+            <label for="banner">banner: </label>
+            <input type="text" name="banner" id="banner"><br>
+            <input type="checkbox" name="encrypt" id="encrypt">
+            <label for="encrypt">service password-encryption</label><br>
+            <input type="checkbox" name="domlookup" id="domlookup">
+            <label for="domlookup">no ip domain-lookup</label><br>
+            <input type="checkbox" name="newuser" id="newuser" onchange="document.getElementById('passworduser').disabled = !this.checked;">
+            <label for="newuser">create a user cisco on privilege 15 with password</label>
+            <input type="text" name="passworduser" id="passworduser" disabled="disabled"><br>
+            <input type="checkbox" name="vtychecked" id="vtychecked" onchange="document.getElementById('passwordvty').disabled = !this.checked;">
+            <label for="vtychecked">configure vty port with password</label>
+            <input type="text" name="passwordvty" id="passwordvty" disabled="disabled"><br>
+            <input type="checkbox" name="conschecked" id="conschecked" onchange="document.getElementById('passwordcons').disabled = !this.checked;">
+            <label for="conschecked">configure console port with password: </label>
+            <input type="text" name="passwordcons" id="passwordcons" disabled="disabled"><br>
+        </div>
 
-<button class="accordion">Interfaces</button>
-<div class="panel">
-    <div id="ints">
-        <button onclick="newint();" class="addbtns">+ add int</button>
-    </div>
-</div>
-<button class="accordion">dynamisches Routing</button>
-<div class="panel">
-    <div id="dynnets">
-        <button onclick="newnetwork();" class="addbtns">+ add network</button>
-        <label for="ripv2">enable ripv2 (required): </label>
-        <input type="checkbox" name="ripv2" id="ripv2">
-    </div>
-</div>
-<button class="accordion">statisches Routing</button>
-<div class="panel">
-    <div id="statnets">
-        <button onclick="newnetworkstat();" class="addbtns">+ add route</button>
-    </div>
-</div>
-<button onclick="generate();">generate script!</button>
-<div id="output" style="display: none">
-</div>
-<textarea id="cliparea"></textarea>
-<br><button onclick="toClip()" class="addbtns" id="clip">copy to clipboard <img width="20px" src="https://img.icons8.com/metro/1600/copy.png" style="filter: invert(100%); display: none"></button>
-</body>
+        <button class="accordion">Interfaces</button>
+        <div class="panel">
+            <div id="ints">
+                <button onclick="newint();" class="addbtns">+ add int</button>
+            </div>
+        </div>
+        <button class="accordion">dynamisches Routing</button>
+        <div class="panel">
+            <div id="dynnets">
+                <button onclick="newnetwork();" class="addbtns">+ add network</button>
+                <label for="ripv2">enable ripv2 (required): </label>
+                <input type="checkbox" name="ripv2" id="ripv2">
+            </div>
+        </div>
+        <button class="accordion">statisches Routing</button>
+        <div class="panel">
+            <div id="statnets">
+                <button onclick="newnetworkstat();" class="addbtns">+ add route</button>
+            </div>
+        </div>
+        <button onclick="generate();">generate script!</button>
+        <div id="output" style="display: none">
+        </div>
+        <textarea id="cliparea"></textarea>
+        <br><button onclick="toClip()" class="addbtns" id="clip">copy to clipboard <img width="20px" src="https://img.icons8.com/metro/1600/copy.png" style="filter: invert(100%); display: none"></button>
+    </body>
 </html>
